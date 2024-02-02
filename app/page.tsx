@@ -2,6 +2,9 @@ import Image from "next/image";
 import Main from "@/app/blocks/main";
 import Description from "@/app/blocks/description";
 import Roadmap from "@/app/blocks/roadmap";
+import HotelBlock from "@/app/blocks/hotel";
+import OrganizatorBlock from "@/app/blocks/organiztor";
+import Avia from "@/app/blocks/avia";
 
 export default function Home() {
 
@@ -11,8 +14,10 @@ export default function Home() {
         dateEnd: '2023-10-17',
         layoutSrc: '/images/layout.jpg',
         description: <div className={'flex text-black text-center flex-col gap-12'}>
-            <div className={'flex flex-col gap-5'}><p className={'font-bold text-2xl text-center'}>от ART PLANET TRAVEL</p><p
-                className={'font-normal text-xl'}>Нас ждёт запоминающееся путешествие в одно из красивейших мест планеты, в
+            <div className={'flex flex-col gap-5'}><p className={'font-bold text-2xl text-center'}>от ART PLANET
+                TRAVEL</p><p
+                className={'font-normal text-xl'}>Нас ждёт запоминающееся путешествие в одно из красивейших мест
+                планеты, в
                 Каппадокию с ее сказочными пейзажами и завораживающими видами!</p>
             </div>
             <div className={'flex flex-col gap-5'}>
@@ -29,12 +34,12 @@ export default function Home() {
                 домами, высеченными прямо в скалах.</p>
             </div>
         </div>,
-        natureGallery: ['/images/nature.jpg', '/images/nature.jpg','/images/nature.jpg','/images/nature.jpg','/images/nature.jpg','/images/nature.jpg','/images/nature.jpg','/images/nature.jpg'],
+        natureGallery: ['/images/nature.jpg', '/images/nature.jpg', '/images/nature.jpg', '/images/nature.jpg', '/images/nature.jpg', '/images/nature.jpg', '/images/nature.jpg', '/images/nature.jpg'],
         roadmap: [
             {
                 date: new Date('2023-10-14'),
                 name: 'Выезд из Чиралы',
-                image:'/images/roadmapitem.jpg',
+                image: '/images/roadmapitem.jpg',
                 stages: [
                     {
                         time: '10:00 ',
@@ -58,7 +63,7 @@ export default function Home() {
             {
                 date: new Date('2023-10-15'),
                 name: 'Выезд из Чиралы',
-                image:'/images/roadmapitem.jpg',
+                image: '/images/roadmapitem.jpg',
                 stages: [
                     {
                         time: '10:00 ',
@@ -82,7 +87,7 @@ export default function Home() {
             {
                 date: new Date('2023-10-16'),
                 name: 'Выезд из Чиралы',
-                image:'/images/roadmapitem.jpg',
+                image: '/images/roadmapitem.jpg',
                 stages: [
                     {
                         time: '10:00 ',
@@ -105,20 +110,20 @@ export default function Home() {
             }
 
         ],
-        roadmapGallery: ['/image1', '/image2'],
+        roadmapGallery: ['/images/rodamapGaleryItem.jpeg', '/images/rodamapGaleryItem2.jpeg', '/images/rodamapGaleryItem.jpeg', '/images/rodamapGaleryItem2.jpeg', '/images/rodamapGaleryItem.jpeg', '/images/rodamapGaleryItem2.jpeg', '/images/rodamapGaleryItem.jpeg', '/images/rodamapGaleryItem2.jpeg', '/images/rodamapGaleryItem.jpeg', '/images/rodamapGaleryItem2.jpeg'],
         hotel: {
             description: 'Будем жить в атмосферном и уютном отеле, который расположен в историческом центре Каппадокии - Гёреме. Отель окружают потрясающие каменные столбы, что впечатляет и создаёт особый колорит.\n' +
                 'Здесь нас будут ждать прекрасные континентальные завтраки, настоящее турецкое гостеприимство и возможность за 5 минут дойти до самых интересных мест в городе.',
-            gallery: ['/image1', '/image2'],
-            variants: {
+            gallery: ['/images/hotelTemp.jpeg', '/images/hotelTemp2.jpeg', '/images/hotelTemp2.jpeg', '/images/hotelTemp2.jpeg', '/images/hotelTemp2.jpeg'],
+            variants: [{
                 name: 'СТАНДАРТНЫЙ НОМЕР',
-                galery: ['/image1', '/image2'],
+                galery: ['/images/hotelRoom.webp', '/images/hotelRoom.webp', '/images/hotelRoom.webp'],
                 priceVariants: [
-                    {price: 449, description: '2-местный номер стандарт'},
-                    {price: 649, description: 'одноместный номер стандарт'}
+                    {price: 449, currency: '€', description: '2-местный номер стандарт'},
+                    {price: 649, currency: '€', description: 'одноместный номер стандарт'}
                 ],
                 remains: 1,
-                included: [' трансфер на автобусе из Чиралы/Анталии до Каппадокии и обратно',
+                included: ['— трансфер на автобусе из Чиралы/Анталии до Каппадокии и обратно',
                     '— проживание 4 дня/3 ночи',
                     '— трансферы в Каппадокии завтраки',
                     '— экскурсионная программа',
@@ -127,13 +132,33 @@ export default function Home() {
                     '— обеды и ужины ', '— входные билеты в музеи'],
                 billingDescriprion: 'Для бронирования необходимо внести предоплату: 10000 р.\n' +
                     'Остаток вносится в долларах по прилету в Турцию'
-            }
+            },
+                {
+                    name: 'НОМЕР ПО-КРУЧЕ',
+                    galery: ['/images/hotelRoom.webp', '/images/hotelRoom.webp', '/images/hotelRoom.webp'],
+                    priceVariants: [
+                        {price: 449, currency: '€', description: '2-местный номер стандарт'},
+                        {price: 649, currency: '€', description: 'одноместный номер стандарт'}
+                    ],
+                    remains: 1,
+                    included: ['— трансфер на автобусе из Чиралы/Анталии до Каппадокии и обратно',
+                        '— проживание 4 дня/3 ночи',
+                        '— трансферы в Каппадокии завтраки',
+                        '— экскурсионная программа',
+                        '— комфортабельное проживание'],
+                    excluded: ['— полет на шаре',
+                        '— обеды и ужины ', '— входные билеты в музеи'],
+                    billingDescriprion: 'Для бронирования необходимо внести предоплату: 10000 р.\n' +
+                        'Остаток вносится в долларах по прилету в Турцию'
+                }
+
+            ]
         },
 
         organizator: {
             name: 'Андрей Фазлеев',
             post: 'Организатор, путешественник, музыкант и Dj ecstatic dance',
-            avatar: '/image',
+            avatar: '/images/avatarTemp.JPG',
             description: <p>Основатель проекта Art Planet, бэкграунд которого более 100 событий: фестивалей, ретритов,
                 экспедиций и осознанных вечеринок. Программный директор Международного дня йоги в Москве (Красная Пресня
                 и Царицыно) 2017-2018 гг.<br/><br/>
@@ -172,11 +197,11 @@ export default function Home() {
         reviews: [
             {
                 name: 'Facebook',
-                icon:'image',
+                icon: 'image',
                 type: 'slider',
                 items: [{
                     name: 'Наталия Котлярова',
-                    event:<p>Art Planet на Байкал (август 2019)</p>,
+                    event: <p>Art Planet на Байкал (август 2019)</p>,
                     profileNickname: 'natalia.kotlyarova',
                     profileLink: 'https://www.facebook.com/natalia.kotlyarova',
                     avatar: '/image',
@@ -192,7 +217,7 @@ export default function Home() {
                 },
                     {
                         name: 'Наталия Котлярова',
-                        event:<p>Art Planet на Байкал (август 2019)</p>,
+                        event: <p>Art Planet на Байкал (август 2019)</p>,
                         profileNickname: 'natalia.kotlyarova',
                         profileLink: 'https://www.facebook.com/natalia.kotlyarova',
                         avatar: '/image',
@@ -211,11 +236,11 @@ export default function Home() {
             },
             {
                 name: 'Instagram',
-                icon:'/image',
+                icon: '/image',
                 type: 'slider',
                 items: [{
                     name: 'Наталия Котлярова',
-                    event:<p>Art Planet на Байкал (август 2019)</p>,
+                    event: <p>Art Planet на Байкал (август 2019)</p>,
                     profileNickname: 'natalia.kotlyarova',
                     profileLink: 'https://www.facebook.com/natalia.kotlyarova',
                     avatar: '/image',
@@ -228,11 +253,11 @@ export default function Home() {
                         Анюта и Лена, отдельное спасибо за рождение Эльфийской принцессы 😉 💎🧚♀️🦄
                         Уже жду новой встречи 😉
                         #artfridayparty</p>,
-                    gallery:['/image']
+                    gallery: ['/image']
                 },
                     {
                         name: 'Наталия Котлярова',
-                        event:<p>Art Planet на Байкал (август 2019)</p>,
+                        event: <p>Art Planet на Байкал (август 2019)</p>,
                         profileNickname: 'natalia.kotlyarova',
                         profileLink: 'https://www.facebook.com/natalia.kotlyarova',
                         avatar: '/image',
@@ -245,20 +270,20 @@ export default function Home() {
                             Анюта и Лена, отдельное спасибо за рождение Эльфийской принцессы 😉 💎🧚♀️🦄
                             Уже жду новой встречи 😉
                             #artfridayparty</p>,
-                        gallery:['/image']
+                        gallery: ['/image']
                     }
 
                 ]
             },
             {
                 name: 'Youtube',
-                icon:'/image',
+                icon: '/image',
                 type: 'videos',
                 items: [
                     {
                         name: 'Наталия Котлярова',
-                        event:<p>Art Planet на Байкал (август 2019)</p>,
-                        video:'/href'
+                        event: <p>Art Planet на Байкал (август 2019)</p>,
+                        video: '/href'
                     }
                 ]
             }
@@ -269,9 +294,13 @@ export default function Home() {
 
     return (
         <div>
-            <Main name={data.tourName} image={data.layoutSrc} dateStart={new Date(data.dateStart)} dateEnd={new Date(data.dateEnd)}/>
+            <Main name={data.tourName} image={data.layoutSrc} dateStart={new Date(data.dateStart)}
+                  dateEnd={new Date(data.dateEnd)}/>
             <Description name={data.tourName} gallery={data.natureGallery} description={data.description}/>
-            <Roadmap roadMap={data.roadmap} tourName={data.tourName}/>
+            <Roadmap roadMap={data.roadmap} roadmapGalley={data.roadmapGallery} tourName={data.tourName}/>
+            <HotelBlock {...data.hotel}/>
+            <OrganizatorBlock {...data.organizator}/>
+            <Avia airTravels={data.airTravel}/>
         </div>
     );
 }

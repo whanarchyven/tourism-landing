@@ -33,3 +33,15 @@ body {
     text-wrap: balance;
   }
 }
+
+.swiper-button-next{
+  color: #fe634e !important;
+}
+
+.swiper-button-prev{
+  color: #fe634e !important;
+}
+
+.swiper-pagination-bullet-active{
+  background: #fe634e !important;
+}

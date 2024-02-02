@@ -1,9 +1,10 @@
 "use client"
 import {FC, ReactNode} from 'react';
 import {classList} from "@/app/utils/classList";
-import Image from "next/image";
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
+
+
 export interface DescriptionBlockInterface {
     name:string,
     description:ReactNode,
@@ -25,6 +26,7 @@ const DescriptionBlock:FC<DescriptionBlockInterface> = ({name,description,galler
                     )
                 })}
             </div>
+
         </div>
     );
 };

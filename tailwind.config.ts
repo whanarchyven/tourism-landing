@@ -18,7 +18,8 @@ const config: Config = {
             },
             colors:{
                 cOrange:'#fb9f82',
-                cRed:'#fe634e'
+                cRed:'#fe634e',
+                cGreen:'rgb(166, 203, 157)',
             }
         },
     },
