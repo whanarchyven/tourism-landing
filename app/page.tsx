@@ -1,113 +1,277 @@
 import Image from "next/image";
+import Main from "@/app/blocks/main";
+import Description from "@/app/blocks/description";
+import Roadmap from "@/app/blocks/roadmap";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+    const data = {
+        tourName: 'ВОЛШЕБНАЯ КАППАДОКИЯ',
+        dateStart: '2023-10-14',
+        dateEnd: '2023-10-17',
+        layoutSrc: '/images/layout.jpg',
+        description: <div className={'flex text-black text-center flex-col gap-12'}>
+            <div className={'flex flex-col gap-5'}><p className={'font-bold text-2xl text-center'}>от ART PLANET TRAVEL</p><p
+                className={'font-normal text-xl'}>Нас ждёт запоминающееся путешествие в одно из красивейших мест планеты, в
+                Каппадокию с ее сказочными пейзажами и завораживающими видами!</p>
+            </div>
+            <div className={'flex flex-col gap-5'}>
+                <p
+                    className={'font-bold text-2xl text-center'}>Мы организуем этот тур, чтобы:</p><p
+                className={'font-normal text-xl'}>Познакомиться со сказочной
+                Каппадокией и увидеть её невероятную красоту своими глазами!
+                Познакомиться с местной культурой, увидеть красивейший вид на долины и пещерные города, прочувствовать
+                весь колорит этого места!
+                И все это — в компании единомышленников в душевной и непринужденной атмосфере!
+
+                Каппадокия - одно из самых необычных и красивых мест в мире со сказочным лунным ландшафтом, над которым
+                на рассвете взмывают десятки воздушных шаров, с потрясающими подземными городами, пещерными церквями и
+                домами, высеченными прямо в скалах.</p>
+            </div>
+        </div>,
+        natureGallery: ['/images/nature.jpg', '/images/nature.jpg','/images/nature.jpg','/images/nature.jpg','/images/nature.jpg','/images/nature.jpg','/images/nature.jpg','/images/nature.jpg'],
+        roadmap: [
+            {
+                date: new Date('2023-10-14'),
+                name: 'Выезд из Чиралы',
+                image:'/images/roadmapitem.jpg',
+                stages: [
+                    {
+                        time: '10:00 ',
+                        stageName: 'Вызжаем из Чиралы на комфортабельном автобусе'
+                    },
+                    {
+                        time: '11:30',
+                        stageName: 'Анталья'
+                    },
+                    {
+                        time: '18:00',
+                        stageName: 'Приезд в Каппадокию, размещение в отеле'
+                    },
+                    {
+                        time: '19:00',
+                        stageName: 'Совместный ужин'
+                    },
+
+                ]
+            },
+            {
+                date: new Date('2023-10-15'),
+                name: 'Выезд из Чиралы',
+                image:'/images/roadmapitem.jpg',
+                stages: [
+                    {
+                        time: '10:00 ',
+                        stageName: 'Вызжаем из Чиралы на комфортабельном автобусе'
+                    },
+                    {
+                        time: '11:30',
+                        stageName: 'Анталья'
+                    },
+                    {
+                        time: '18:00',
+                        stageName: 'Приезд в Каппадокию, размещение в отеле'
+                    },
+                    {
+                        time: '19:00',
+                        stageName: 'Совместный ужин'
+                    },
+
+                ]
+            },
+            {
+                date: new Date('2023-10-16'),
+                name: 'Выезд из Чиралы',
+                image:'/images/roadmapitem.jpg',
+                stages: [
+                    {
+                        time: '10:00 ',
+                        stageName: 'Вызжаем из Чиралы на комфортабельном автобусе'
+                    },
+                    {
+                        time: '11:30',
+                        stageName: 'Анталья'
+                    },
+                    {
+                        time: '18:00',
+                        stageName: 'Приезд в Каппадокию, размещение в отеле'
+                    },
+                    {
+                        time: '19:00',
+                        stageName: 'Совместный ужин'
+                    },
+
+                ]
+            }
+
+        ],
+        roadmapGallery: ['/image1', '/image2'],
+        hotel: {
+            description: 'Будем жить в атмосферном и уютном отеле, который расположен в историческом центре Каппадокии - Гёреме. Отель окружают потрясающие каменные столбы, что впечатляет и создаёт особый колорит.\n' +
+                'Здесь нас будут ждать прекрасные континентальные завтраки, настоящее турецкое гостеприимство и возможность за 5 минут дойти до самых интересных мест в городе.',
+            gallery: ['/image1', '/image2'],
+            variants: {
+                name: 'СТАНДАРТНЫЙ НОМЕР',
+                galery: ['/image1', '/image2'],
+                priceVariants: [
+                    {price: 449, description: '2-местный номер стандарт'},
+                    {price: 649, description: 'одноместный номер стандарт'}
+                ],
+                remains: 1,
+                included: [' трансфер на автобусе из Чиралы/Анталии до Каппадокии и обратно',
+                    '— проживание 4 дня/3 ночи',
+                    '— трансферы в Каппадокии завтраки',
+                    '— экскурсионная программа',
+                    '— комфортабельное проживание'],
+                excluded: ['— полет на шаре',
+                    '— обеды и ужины ', '— входные билеты в музеи'],
+                billingDescriprion: 'Для бронирования необходимо внести предоплату: 10000 р.\n' +
+                    'Остаток вносится в долларах по прилету в Турцию'
+            }
+        },
+
+        organizator: {
+            name: 'Андрей Фазлеев',
+            post: 'Организатор, путешественник, музыкант и Dj ecstatic dance',
+            avatar: '/image',
+            description: <p>Основатель проекта Art Planet, бэкграунд которого более 100 событий: фестивалей, ретритов,
+                экспедиций и осознанных вечеринок. Программный директор Международного дня йоги в Москве (Красная Пресня
+                и Царицыно) 2017-2018 гг.<br/><br/>
+
+                Практик медитации и проводник осознанного образа жизни. Исполняет исцеляющую музыку. Проводит
+                персональные сессии в вопросах реализации и отношений, направленные на гармонизацию и трансформацию
+                жизни человека.<br/><br/>
+                Более 11 лет в практиках.
+
+                Лидер и создатель музыкального коллектива ATMANLOVE<br/><br/>
+                Dj Ecstatic Dance.
+                Музыкант-мультиинструменталист: ситар, гитара, перкуссия, вокалист, исполняет и записывает электронную
+                музыку в формате etno-fusion (сочетание электронного звучания и живых инструментов).</p>,
+            tours: [
+                {
+                    name: 'Индийские Гималаи, восхождение на Тапован 4500 м (Ришикеш-Ганготри-Тапован)',
+                    year: 2017,
+                },
+                {
+                    name: 'Автопутешествие по Грузии (Москва-Сванетия 5000км)',
+                    year: 2018,
+                },
+                {
+                    name: 'Тур в Индию (Арамболь-Гокарна)',
+                    year: 2018,
+                }
+            ],
+        },
+        airTravel: [{
+            name: 'Если вы летите только в Каппадокию',
+            description: 'Мы выезжаем утром 14 октября из деревни Чиралы. Аэропорт Антальи будем проезжать в районе 10:30—11:00 утра.\n' +
+                'Вы можете присоединиться к нам в аэропорте или прилететь на день раньше 13 октября, чтобы отдохнуть после перелёта и иметь дополнительный запас по времени.\n' +
+                'На обратном пути мы будем проезжать мимо аэропорта Антальи в районе 19:00—20:00 часов. Также Вы можете переночевать в Антальи и улететь 18 октября'
+        }],
+        photoGallery: ['/image'],
+        reviews: [
+            {
+                name: 'Facebook',
+                icon:'image',
+                type: 'slider',
+                items: [{
+                    name: 'Наталия Котлярова',
+                    event:<p>Art Planet на Байкал (август 2019)</p>,
+                    profileNickname: 'natalia.kotlyarova',
+                    profileLink: 'https://www.facebook.com/natalia.kotlyarova',
+                    avatar: '/image',
+                    text: <p>Они в потоке. Они открывают новые миры для творчества и самопознания. Они помогают
+                        соединить сердце, душу и тело и встретиться с новыми интересными гранями себя. Они - это
+                        организаторы Art Planet.
+                        Дорогие, Andrew Fazleev и команда, спасибо за то, что «проводите», создаёте потоковость...
+                        просто являясь самими собой! Вы прекрасны! Обожаю вас! Спасибо, что вы есть!! Благодарю за
+                        вчерашний тёплый, семейный и глубокий вечер! 🙌❤️🌸🦄
+                        Анюта и Лена, отдельное спасибо за рождение Эльфийской принцессы 😉 💎🧚♀️🦄
+                        Уже жду новой встречи 😉
+                        #artfridayparty</p>
+                },
+                    {
+                        name: 'Наталия Котлярова',
+                        event:<p>Art Planet на Байкал (август 2019)</p>,
+                        profileNickname: 'natalia.kotlyarova',
+                        profileLink: 'https://www.facebook.com/natalia.kotlyarova',
+                        avatar: '/image',
+                        text: <p>Они в потоке. Они открывают новые миры для творчества и самопознания. Они помогают
+                            соединить сердце, душу и тело и встретиться с новыми интересными гранями себя. Они - это
+                            организаторы Art Planet.
+                            Дорогие, Andrew Fazleev и команда, спасибо за то, что «проводите», создаёте потоковость...
+                            просто являясь самими собой! Вы прекрасны! Обожаю вас! Спасибо, что вы есть!! Благодарю за
+                            вчерашний тёплый, семейный и глубокий вечер! 🙌❤️🌸🦄
+                            Анюта и Лена, отдельное спасибо за рождение Эльфийской принцессы 😉 💎🧚♀️🦄
+                            Уже жду новой встречи 😉
+                            #artfridayparty</p>
+                    }
+
+                ]
+            },
+            {
+                name: 'Instagram',
+                icon:'/image',
+                type: 'slider',
+                items: [{
+                    name: 'Наталия Котлярова',
+                    event:<p>Art Planet на Байкал (август 2019)</p>,
+                    profileNickname: 'natalia.kotlyarova',
+                    profileLink: 'https://www.facebook.com/natalia.kotlyarova',
+                    avatar: '/image',
+                    text: <p>Они в потоке. Они открывают новые миры для творчества и самопознания. Они помогают
+                        соединить сердце, душу и тело и встретиться с новыми интересными гранями себя. Они - это
+                        организаторы Art Planet.
+                        Дорогие, Andrew Fazleev и команда, спасибо за то, что «проводите», создаёте потоковость...
+                        просто являясь самими собой! Вы прекрасны! Обожаю вас! Спасибо, что вы есть!! Благодарю за
+                        вчерашний тёплый, семейный и глубокий вечер! 🙌❤️🌸🦄
+                        Анюта и Лена, отдельное спасибо за рождение Эльфийской принцессы 😉 💎🧚♀️🦄
+                        Уже жду новой встречи 😉
+                        #artfridayparty</p>,
+                    gallery:['/image']
+                },
+                    {
+                        name: 'Наталия Котлярова',
+                        event:<p>Art Planet на Байкал (август 2019)</p>,
+                        profileNickname: 'natalia.kotlyarova',
+                        profileLink: 'https://www.facebook.com/natalia.kotlyarova',
+                        avatar: '/image',
+                        text: <p>Они в потоке. Они открывают новые миры для творчества и самопознания. Они помогают
+                            соединить сердце, душу и тело и встретиться с новыми интересными гранями себя. Они - это
+                            организаторы Art Planet.
+                            Дорогие, Andrew Fazleev и команда, спасибо за то, что «проводите», создаёте потоковость...
+                            просто являясь самими собой! Вы прекрасны! Обожаю вас! Спасибо, что вы есть!! Благодарю за
+                            вчерашний тёплый, семейный и глубокий вечер! 🙌❤️🌸🦄
+                            Анюта и Лена, отдельное спасибо за рождение Эльфийской принцессы 😉 💎🧚♀️🦄
+                            Уже жду новой встречи 😉
+                            #artfridayparty</p>,
+                        gallery:['/image']
+                    }
+
+                ]
+            },
+            {
+                name: 'Youtube',
+                icon:'/image',
+                type: 'videos',
+                items: [
+                    {
+                        name: 'Наталия Котлярова',
+                        event:<p>Art Planet на Байкал (август 2019)</p>,
+                        video:'/href'
+                    }
+                ]
+            }
+
+
+        ]
+    }
+
+    return (
+        <div>
+            <Main name={data.tourName} image={data.layoutSrc} dateStart={new Date(data.dateStart)} dateEnd={new Date(data.dateEnd)}/>
+            <Description name={data.tourName} gallery={data.natureGallery} description={data.description}/>
+            <Roadmap roadMap={data.roadmap} tourName={data.tourName}/>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+    );
 }
