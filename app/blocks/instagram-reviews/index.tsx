@@ -19,11 +19,11 @@ import Button from "@/app/components/Button";
 export interface InstagramReviewsBlockInterface {
     reviews: {
         name: string,
-        event: ReactNode,
+        event: string,
         profileNickname: string,
         profileLink: string,
         avatar: string,
-        text: ReactNode,
+        text: string,
         gallery: string[]
     }[]
 }

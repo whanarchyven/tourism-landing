@@ -17,7 +17,7 @@ import "swiper/css/pagination"
 
 export interface RoadMapBlockInterface {
     roadMap: {
-        date: Date,
+        date: string,
         name: string,
         image: string,
         stages: {
@@ -40,7 +40,7 @@ const RoadMapBlock: FC<RoadMapBlockInterface> = ({roadMap, tourName, roadmapGall
             <div className={'flex flex-col items-center gap-8 sm:gap-20 xl:w-3/5'}>
                 {roadMap.map((stage, counter) => {
                     return (
-                        <RoadmapStage key={counter} date={stage.date} name={stage.name} image={stage.image}
+                        <RoadmapStage key={counter} date={new Date(stage.date)} name={stage.name} image={stage.image}
                                       stages={stage.stages}/>
                     )
                 })}

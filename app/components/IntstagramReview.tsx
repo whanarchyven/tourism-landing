@@ -1,13 +1,16 @@
 import {FC, ReactNode} from "react";
+import Markdown from "react-markdown";
+import {CustomA} from "@/app/mdx/CustomA";
+import {CustomP} from "@/app/mdx/CustomP";
 
 
 export interface InstagramReviewInterface {
     name: string,
-        event: ReactNode,
+        event: string,
         profileNickname: string,
         profileLink: string,
         avatar: string,
-        text: ReactNode,
+        text: string,
         gallery: string[]
 }
 const InstagramReview:FC<InstagramReviewInterface> = ({ name,text, profileNickname, profileLink, avatar, event, gallery}) => {
@@ -21,10 +24,10 @@ const InstagramReview:FC<InstagramReviewInterface> = ({ name,text, profileNickna
                 </div>
                 <div className={'flex flex-col gap-6'}>
                     <div className={'text-black text-lg font-bold'}>
-                        <span className={'text-cOrange xl:text-base font-bold'}>{profileNickname}</span> о путешествии {event}
+                        <span className={'text-cOrange xl:text-base font-bold'}>{profileNickname}</span> о путешествии <Markdown components={{a:CustomA}}>{event}</Markdown>
                     </div>
                     <div className={'text-black xl:text-base text-sm font-light'}>
-                        {text}
+                        <Markdown components={{p:CustomP}}>{text}</Markdown>
                     </div>
                     <div className={'grid grid-cols-3 gap-6'}>
                         {gallery.map((image,counter)=>{

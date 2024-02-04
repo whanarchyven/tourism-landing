@@ -19,7 +19,7 @@ export interface FacebookReviewsBlockInterface {
         profileNickname?: string,
         profileLink?: string,
         avatar?: string,
-        text?: ReactNode,
+        text?: string,
     }[]
 }
 
