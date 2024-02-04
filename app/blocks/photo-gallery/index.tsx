@@ -12,7 +12,7 @@ export interface PhotoGalleryInterface {
 const PhotoGallery: FC<PhotoGalleryInterface> = ({photos}) => {
     return (
         <div
-            className={classList('w-full', 'grid bg-white grid-cols-4')}>
+            className={classList('w-full', 'grid bg-white sm:grid-cols-2 xl:grid-cols-4')}>
             {photos.map((photo, counter) => {
                 return (
                     <Zoom key={counter}><img src={photo}

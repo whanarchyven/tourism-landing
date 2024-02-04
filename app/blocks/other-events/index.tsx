@@ -10,12 +10,12 @@ export interface OtherEventsBlockInterface {
 }
 const OtherEventsBlock:FC<OtherEventsBlockInterface> = ({events}) => {
     return (
-        <div className={classList('w-full bg-white py-24 relative', 'font-open flex flex-col gap-20 items-center justify-center')}>
-            <p className={'font-bold text-cOrange text-center text-5xl uppercase'}>Наши поездки и мероприятия</p>
-            <div className={'w-full grid grid-cols-6 px-24 gap-8'}>
+        <div className={classList('w-full bg-white py-9 sm:py-24 relative', 'font-open flex flex-col gap-20 items-center justify-center')}>
+            <p className={'font-bold text-cOrange text-center text-2xl sm:text-5xl uppercase'}>Наши поездки и мероприятия</p>
+            <div className={'w-full grid sm:grid-cols-3 grid-cols-1 xl:grid-cols-6 px-10 sm:px-24 gap-8'}>
                 {events.map((event,counter)=>{
                     return(
-                        <div key={counter} className={'flex flex-col'}>
+                        <div key={counter} className={'flex cursor-pointer flex-col'}>
                             <img src={event.avatar}/>
                             <p className={'text-black text-sm text-center font-bold'}>{event.name}</p>
                         </div>

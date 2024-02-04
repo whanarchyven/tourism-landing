@@ -45,3 +45,15 @@ body {
 .swiper-pagination-bullet-active{
   background: #fe634e !important;
 }
+
+
+@media screen and (max-width: 960px) {
+  .swiper-button-next{
+    display: none !important;
+  }
+
+  .swiper-button-prev{
+    display: none !important;
+  }
+
+}

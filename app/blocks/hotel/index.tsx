@@ -23,10 +23,10 @@ export interface HotelBlockInterface {
 const HotelBlock:FC<HotelBlockInterface> = ({description,gallery,variants}) => {
     return (
         <div
-            className={classList('w-full bg-white py-24 relative', 'font-open flex flex-col gap-20 items-center justify-center')}>
-            <p className={'text-cOrange font-bold text-5xl uppercase text-center'}>Размещение</p>
-            <p className={'text-center text-black font-medium w-2/3'}>{description}</p>
-            <div className={'grid grid-cols-4 grid-rows-2'}>
+            className={classList('w-full bg-white py-4 xl:py-24 relative', 'font-open flex flex-col gap-20 items-center justify-center')}>
+            <p className={'text-cOrange font-bold text-3xl sm:text-5xl uppercase text-center'}>Размещение</p>
+            <p className={'text-center text-black font-medium w-full sm:p-0 p-3 sm:w-2/3'}>{description}</p>
+            <div className={'grid xl:grid-cols-4 grid-rows-2'}>
                 <div className={'col-span-2 row-span-2'}>
                     <Zoom>
                         <img
@@ -39,13 +39,13 @@ const HotelBlock:FC<HotelBlockInterface> = ({description,gallery,variants}) => {
                     src={item}/></Zoom>))}
             </div>
             <div className={'flex flex-col gap-1'}>
-                <p className={'text-cOrange font-bold text-5xl uppercase text-center'}>Стоимость</p>
-                <p className={'text-cGreen font-bold text-5xl uppercase text-center'}>ВАРИАНТЫ ПРОЖИВАНИЯ</p>
+                <p className={'text-cOrange font-bold text-3xl sm:text-5xl uppercase text-center'}>Стоимость</p>
+                <p className={'text-cGreen font-bold text-xl sm:text-5xl uppercase text-center'}>ВАРИАНТЫ ПРОЖИВАНИЯ</p>
             </div>
-            <div className={'px-24'}>
+            <div className={' xl:px-24'}>
                 {variants.map((variant,counter)=>{
                     return(
-                        <div key={counter} className={'grid mb-24 relative grid-cols-2 gap-8'}>
+                        <div key={counter} className={'grid my-6 sm:mb-24 relative grid-cols-1 p-4 sm:grid-cols-2 gap-8'}>
                             <div className={'w-full flex flex-col gap-3'}>
                                 {variant.galery.map((item,counter)=>{
                                     return(
@@ -53,8 +53,8 @@ const HotelBlock:FC<HotelBlockInterface> = ({description,gallery,variants}) => {
                                     )
                                 })}
                             </div>
-                            <div className={'sticky top-6 flex h-fit flex-col gap-6'}>
-                                <p className={'text-cOrange font-bold text-4xl uppercase text-left'}>{variant.name}</p>
+                            <div className={'sticky top-6 flex sm:px-2 h-fit flex-col gap-6'}>
+                                <p className={'text-cOrange font-bold text-2xl sm:text-3xl xl:text-4xl uppercase text-left'}>{variant.name}</p>
                                 <div className={'flex flex-col gap-1'}>
                                     <p className={'uppercase font-bold text-black'}>Стоимость на 1 взрослого:</p>
                                     {variant.priceVariants.map((pricevariant,counter) => {

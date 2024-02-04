@@ -12,12 +12,12 @@ export interface DescriptionBlockInterface {
 }
 const DescriptionBlock:FC<DescriptionBlockInterface> = ({name,description,gallery}) => {
     return (
-        <div className={classList('w-full bg-white pt-24 relative', 'font-open flex flex-col gap-20 items-center justify-center')}>
-            <div className={'w-2/3 flex flex-col gap-20 items-center justify-center'}>
-                <p className={'text-cOrange font-bold text-5xl'}>{name}</p>
+        <div className={classList('w-full bg-white py-10 sm:pt-24 relative', 'font-open flex flex-col gap-8 sm:gap-20 items-center justify-center')}>
+            <div className={'sm:w-2/3 flex flex-col gap-8 sm:text-base text-sm sm:gap-20 items-center justify-center'}>
+                <p className={'text-cOrange font-bold text-center text-3xl xl:text-5xl'}>{name}</p>
                 {description}
             </div>
-            <div className={'grid grid-cols-4 w-full'}>
+            <div className={'grid sm:grid-cols-2 xl:grid-cols-4 w-full'}>
                 {gallery.map((image)=>{
                     return(
                         <Zoom key={image}>

@@ -22,16 +22,16 @@ export default function Home() {
         dateEnd: '2023-10-17',
         layoutSrc: '/images/layout.jpg',
         description: <div className={'flex text-black text-center flex-col gap-12'}>
-            <div className={'flex flex-col gap-5'}><p className={'font-bold text-2xl text-center'}>от ART PLANET
+            <div className={'flex flex-col p-4 gap-5'}><p className={'font-bold sm:text-2xl text-center'}>от ART PLANET
                 TRAVEL</p><p
-                className={'font-normal text-xl'}>Нас ждёт запоминающееся путешествие в одно из красивейших мест
+                className={'font-normal sm:text-xl'}>Нас ждёт запоминающееся путешествие в одно из красивейших мест
                 планеты, в
                 Каппадокию с ее сказочными пейзажами и завораживающими видами!</p>
             </div>
             <div className={'flex flex-col gap-5'}>
                 <p
-                    className={'font-bold text-2xl text-center'}>Мы организуем этот тур, чтобы:</p><p
-                className={'font-normal text-xl'}>Познакомиться со сказочной
+                    className={'font-bold sm:text-2xl text-center'}>Мы организуем этот тур, чтобы:</p><p
+                className={'font-normal sm:text-xl'}>Познакомиться со сказочной
                 Каппадокией и увидеть её невероятную красоту своими глазами!
                 Познакомиться с местной культурой, увидеть красивейший вид на долины и пещерные города, прочувствовать
                 весь колорит этого места!
@@ -322,7 +322,7 @@ export default function Home() {
     }
 
     return (
-        <div>
+        <div className={'overflow-hidden'}>
             <Main name={data.tourName} image={data.layoutSrc} dateStart={new Date(data.dateStart)}
                   dateEnd={new Date(data.dateEnd)}/>
             <Description name={data.tourName} gallery={data.natureGallery} description={data.description}/>

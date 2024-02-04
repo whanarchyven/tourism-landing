@@ -14,7 +14,7 @@ const Index:FC<MainBlockInterface> = ({name,image,dateEnd,dateStart}) => {
     return (
         <div className={classList('w-full h-screen relative', 'font-open flex items-center justify-center')}>
             <div className={'absolute w-full h-full'}>
-                <Image src={image} alt={'layout'} layout={'fill'}/>
+                <Image className={'object-cover'} src={image} alt={'layout'} layout={'fill'}/>
             </div>
             <div className={'bg-black absolute w-full h-full top-0 left-0 bg-opacity-30 '}>
 
@@ -23,8 +23,8 @@ const Index:FC<MainBlockInterface> = ({name,image,dateEnd,dateStart}) => {
                 <div className={'w-96 h-44 relative'}>
                     <Image src={'/images/logo.png'} alt={'logo'} layout={'fill'}/>
                 </div>
-                <p className={'uppercase text-8xl w-1/2 text-center font-bold'}>{name}</p>
-                <p className={'text-4xl uppercase font-bold'}>{format(dateStart, 'dd-', {locale: ru})}{format(dateEnd, 'dd MMMM yyyy', {locale: ru})}</p>
+                <p className={'uppercase xl:text-8xl text-3xl sm:text-5xl xl:w-1/2 text-center font-bold'}>{name}</p>
+                <p className={' xl:text-4xl text-lg uppercase font-bold'}>{format(dateStart, 'dd-', {locale: ru})}{format(dateEnd, 'dd MMMM yyyy', {locale: ru})}</p>
             </div>
         </div>
     );

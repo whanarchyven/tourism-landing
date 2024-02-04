@@ -26,10 +26,10 @@ export interface FacebookReviewsBlockInterface {
 const FacebookReviewsBlock: FC<FacebookReviewsBlockInterface> = ({reviews}) => {
     return (
         <div id={'facebook-reviews'}
-            className={classList('w-full bg-white py-24 relative', 'font-open flex flex-col gap-10 items-center justify-center')}>
+            className={classList('w-full bg-white p-8 xl:py-24 relative', 'font-open flex flex-col gap-10 items-center justify-center')}>
             <Swiper loop={true} pagination={{clickable: true}} navigation={true} modules={[Navigation, Pagination]}
-                    className={'h-full w-2/3'}>
-                {reviews.map((item, counter) => <SwiperSlide key={counter} className={'p-24 w-full'}>
+                    className={'h-full w-full sm:w-full xl:w-2/3'}>
+                {reviews.map((item, counter) => <SwiperSlide key={counter} className={'sm:p-20 xl:p-24 w-full'}>
                     <FacebookReview {...item}/>
                 </SwiperSlide>)}
             </Swiper>

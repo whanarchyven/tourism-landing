@@ -30,10 +30,10 @@ export interface InstagramReviewsBlockInterface {
 
 const InstagramReviewsBlock: FC<InstagramReviewsBlockInterface> = ({reviews}) => {
     return (
-        <div id={'facebook-reviews'}
-             className={classList('w-full bg-white py-24 relative', 'font-open flex flex-col gap-10 items-center justify-center')}>
-            <p className={'text-cOrange uppercase font-bold text-5xl'}>Отзывы Instagram</p>
-            <div className={'bg-[#f2f2f2] flex flex-col items-center w-full gap-24 p-24'}>
+        <div id={'instagram-reviews'}
+             className={classList('w-full bg-white sm:py-10 xl:py-24 relative', 'font-open flex flex-col gap-10 items-center justify-center')}>
+            <p className={'text-cOrange uppercase font-bold text-2xl sm:text-5xl'}>Отзывы Instagram</p>
+            <div className={'bg-[#f2f2f2] flex flex-col items-center w-full gap-24 p-4 py-8 sm:p-8 xl:p-24'}>
                 {reviews.map((item, counter) => <InstagramReview key={counter} {...item}/>)}
                 <Button>Забронировать тур</Button>
             </div>
